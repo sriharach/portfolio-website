@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const usetypewriter = (text: string[] | string, delay: number = 100) => {
+const useTypewriter = (text: string[] | string, delay: number = 100) => {
   const [currentText, setCurrentText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [textIndex, setTextIndex] = useState(0)
@@ -46,4 +46,4 @@ const usetypewriter = (text: string[] | string, delay: number = 100) => {
   return { currentText }
 }
 
-export default usetypewriter
+export default useTypewriter

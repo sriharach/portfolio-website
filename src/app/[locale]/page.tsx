@@ -1,19 +1,5 @@
-'use client'
-
-import AboutPage from '@/components/home/AboutPage'
-import Contact from '@/components/home/Contact'
-import Experiences from '@/components/home/Experiences'
-import HomePage from '@/components/home/HomePage'
-import Portfolio from '@/components/home/Portfolio'
+import PortfolioPage from '@/components/home/PortfolioPage'
 
 export default function Home() {
-  return (
-    <div className='overflow-y-hidden flex-1'>
-      <HomePage />
-      <AboutPage />
-      <Experiences />
-      <Portfolio />
-      <Contact />
-    </div>
-  )
+  return <PortfolioPage />
 }

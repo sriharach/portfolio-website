@@ -3,5 +3,6 @@ export interface GardDaisyUiProps {
     title?: string
     feature?: string
     description?: string
+    viewText?: string
     onClick?: () => void
 }

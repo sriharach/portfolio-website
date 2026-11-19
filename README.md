@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sriharach Portfolio
 
-## Getting Started
+Personal portfolio built with Next.js, Tailwind CSS 4, and daisyUI 5. The site supports English and Thai and exports as static HTML for hosting under `/portfolio`.
 
-First, run the development server:
+## Routes
+
+- English: `/portfolio/`
+- Thai: `/portfolio/th/`
+
+## Development
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn lint
+yarn test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Static Export
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js writes the static site to `out/`. Publish the contents at the `/portfolio` path of the target host; no Next.js runtime server is required. The exported site uses the existing image, project, font, and CV files from `public/`.
 
-## Learn More
+The contact form uses EmailJS in the browser. Set these values in the build environment:
 
-To learn more about Next.js, take a look at the following resources:
+- `SERVICE_ID`
+- `TEMPLATE_ID`
+- `PUBLIC_KEY`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project and social links are also supplied at build time:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `WISDOM_DOMAIN`
+- `WISDOM_MANAGEMENT_DOMAIN`
+- `IMAGE_CONVERTER_DOMAIN`
+- `OPEN_API_DOMAIN`
+- `URL_LINKEDIN`
+- `URL_GITHUB`
 
-## Deploy on Vercel
+EmailJS credentials used by a static client are public; use only the EmailJS public key and configure domain restrictions in the EmailJS account.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tests
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`yarn test` runs Vitest with jsdom. The test configuration includes only hook tests under `src/hooks`.

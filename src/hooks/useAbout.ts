@@ -6,7 +6,7 @@ const useAbout = () => {
   const { width } = useResponsive()
 
   const handleClickDownloadCV = () => {
-    fetch('cv-sriharach.pdf').then((res) => {
+    fetch('/portfolio/cv-sriharach.pdf').then((res) => {
       res.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
         const alink = document.createElement('a')

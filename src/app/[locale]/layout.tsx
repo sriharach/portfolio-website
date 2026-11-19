@@ -1,13 +1,14 @@
 // libs
-import type { Metadata } from 'next'
 import { getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
-import React, { ReactNode } from 'react'
-import { ToastContainer } from 'react-toastify'
+import { setRequestLocale } from 'next-intl/server'
+import type { ReactNode } from 'react'
+import type { Metadata } from 'next'
+import '@/styles/globals.css'
 
 // components
 import Layout from '../../components/modules/layouts/Layout'
-import '@/styles/globals.scss'
+import DocumentRoot from '../DocumentRoot'
 
 export const metadata: Metadata = {
   title: 'Portfolio Sriharach',
@@ -19,25 +20,23 @@ type LayoutProps = {
   params: Promise<{ locale: string }>
 }
 
+export function generateStaticParams() {
+  return [{ locale: 'th' }]
+}
+
 export default async function RootLayout({
   children,
   params,
 }: Readonly<LayoutProps>) {
   const { locale } = await params
+  setRequestLocale(locale)
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          <ToastContainer
-            position='bottom-right'
-            autoClose={2000}
-            hideProgressBar={false}
-          />
-          <Layout>{children}</Layout>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <DocumentRoot locale={locale}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <Layout>{children}</Layout>
+      </NextIntlClientProvider>
+    </DocumentRoot>
   )
 }

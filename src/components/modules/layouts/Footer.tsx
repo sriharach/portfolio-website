@@ -1,11 +1,14 @@
 // libs
 import React from 'react'
-import styled from './layout.module.scss'
+import { useTranslations } from 'next-intl'
+import styled from './layout.module.css'
 
 const Footer = () => {
+  const t = useTranslations('footer')
+
   return (
     <footer className={styled['layout__footer']}>
-      <p>&copy; {new Date().getFullYear()} copyright all right reserved</p>
+      <p>{t('copyright', { year: new Date().getFullYear() })}</p>
     </footer>
   )
 }

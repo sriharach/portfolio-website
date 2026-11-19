@@ -1,25 +1,29 @@
+import { useTranslations } from 'next-intl'
+
 // components
 import SwitchLocale from '../switchLocale/SwitchLocale'
-import styled from './layout.module.scss'
+import styled from './layout.module.css'
 
 const DesktopMode = () => {
+  const t = useTranslations('nav')
+
   return (
     <section className='hidden justify-between items-center space-x-12 lg:flex'>
       <ul className='flex space-x-8 items-center'>
         <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#home'>Home</a>
+          <a href='#home'>{t('home')}</a>
         </li>
         <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#about'>About</a>
+          <a href='#about'>{t('about')}</a>
         </li>
         <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#experiences'>Experience</a>
+          <a href='#experiences'>{t('experience')}</a>
         </li>
         <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#portfolio'>Portfolio</a>
+          <a href='#portfolio'>{t('portfolio')}</a>
         </li>
         <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#contact'>Contact</a>
+          <a href='#contact'>{t('contact')}</a>
         </li>
       </ul>
       <SwitchLocale />

@@ -2,7 +2,7 @@
 
 // libs
 import React from 'react'
-import styled from './layout.module.scss'
+import styled from './layout.module.css'
 import clsx from 'clsx'
 
 // hooks
@@ -21,7 +21,9 @@ const Header = () => {
       data-testid='test-header'
       className={clsx(styled['layout__header'])}
     >
-      <div className='text-xl lg:text-3xl font-bold'>Portfolio</div>
+      <a className='text-lg font-bold tracking-[0.08em] text-main-color-primavera4' href='#home'>
+        SRIHARACH<span className='text-main-color-primavera1'>.</span>
+      </a>
       <DesktopMode />
       <MobileMode />
     </header>
