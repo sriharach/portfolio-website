@@ -1,5 +1,5 @@
 export interface ButtonDaisyUiProps
-  extends React.HTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string
   color?: 'primary' | 'secondary' | 'accent' | 'ghost'
   variant?: 'outline' | 'primary' | 'ghost'

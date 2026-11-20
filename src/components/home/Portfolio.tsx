@@ -1,59 +1,74 @@
 // libs
-import React from 'react'
+import Image from 'next/image'
+import { FiArrowUpRight } from 'react-icons/fi'
+import { useTranslations } from 'next-intl'
 
-// components
-import GardDaisyUi from '../daisyUI/gardDaisyUi/GardDaisyUi'
-import styled from './home.module.scss'
+// styles
+import styled from './portfolio.module.css'
 
 // shared
-import TextTopic from '../shared/textTopic/textTopic'
 import FadeUpOnScroll from '../shared/fadeUponScroll/fadeUponScroll'
 
 // hooks
 import usePortfolio from '@/hooks/usePortfolio'
+import { portfolioProjects } from './portfolioProjects'
 
 const Portfolio = () => {
+  const t = useTranslations('portfolio')
   const { onClickRedirect } = usePortfolio()
 
   return (
     <section id='portfolio' className={styled['profile']}>
       <FadeUpOnScroll className={styled['profile-box-col']}>
-        <TextTopic lineCenter text='My Portfolio' className='text-2xl sm:text-3xl' />
-        <p className='text-neutral-500 text-center'>
-          I design and develop services for customers of all sizes, specializing
-          in creating stylish, modern websites, web services and online stores.
-        </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
-          <GardDaisyUi
-            image='/projects/wisdom-construction.webp'
-            title='Wisdom construction'
-            feature='Construction inspect'
-            onClick={() => onClickRedirect(process.env.WISDOM_DOMAIN as string)}
-          />
-          <GardDaisyUi
-            image='/projects/wisdom-construction-management.webp'
-            title='Wisdom construction management'
-            feature='Construction inspect'
-            onClick={() =>
-              onClickRedirect(process.env.WISDOM_MANAGEMENT_DOMAIN as string)
-            }
-          />
-          <GardDaisyUi
-            image='/projects/open-api-management.webp'
-            title='Open api management'
-            feature='Open api web'
-            onClick={() =>
-              onClickRedirect(process.env.OPEN_API_DOMAIN as string)
-            }
-          />
-          <GardDaisyUi
-            image='/projects/image-converter.webp'
-            title='Image converter'
-            feature='Image converter web'
-            onClick={() =>
-              onClickRedirect(process.env.IMAGE_CONVERTER_DOMAIN as string)
-            }
-          />
+        <div className={styled['portfolio-heading']}>
+          <div>
+            <p className={styled['portfolio-kicker']}>{t('eyebrow')}</p>
+            <h2 className={styled['portfolio-title']}>{t('title')}</h2>
+          </div>
+          <p className={styled['portfolio-intro']}>{t('description')}</p>
+        </div>
+        <div className={styled['project-list']}>
+          {portfolioProjects.map(({ key, image, destination, layout }, index) => {
+            const title = t(`projects.${key}.title`)
+
+            return (
+              <article
+                className={styled['project-card']}
+                data-image-position={layout}
+                data-tone={index % 2 === 0 ? 'orange' : 'white'}
+                key={key}
+              >
+                <div className={styled['project-copy']}>
+                  <span className={styled['project-index']}>0{index + 1}.</span>
+                  <p className={styled['project-feature']}>{t(`projects.${key}.feature`)}</p>
+                  <h3 className={styled['project-title']}>{title}</h3>
+                  <button
+                    aria-label={`${t('view')} ${title}`}
+                    className={styled['project-link']}
+                    onClick={() => onClickRedirect(destination)}
+                    type='button'
+                  >
+                    {t('view')}
+                    <FiArrowUpRight aria-hidden='true' />
+                  </button>
+                </div>
+                <button
+                  aria-label={`${t('view')} ${title}`}
+                  className={styled['project-image-link']}
+                  onClick={() => onClickRedirect(destination)}
+                  type='button'
+                >
+                  <Image
+                    alt={title}
+                    className={styled['project-image']}
+                    height={900}
+                    src={image}
+                    width={1100}
+                  />
+                </button>
+              </article>
+            )
+          })}
         </div>
       </FadeUpOnScroll>
     </section>

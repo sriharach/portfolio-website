@@ -1,0 +1,78 @@
+@reference "../../styles/globals.css";
+
+.home {
+  @apply relative flex min-h-screen w-full flex-col items-center overflow-hidden px-5 pb-0 pt-32 sm:px-8 sm:pt-36;
+}
+
+.home-started {
+  @apply relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-12 text-center;
+}
+
+.hero-copy {
+  @apply flex max-w-5xl flex-col items-center;
+}
+
+.hero-kicker {
+  @apply mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-main-content-color-primavera3;
+}
+
+.hero-kicker::before,
+.hero-kicker::after {
+  content: '';
+  @apply h-px w-8 bg-main-color-primavera2/70;
+}
+
+.hero-title {
+  @apply max-w-5xl text-5xl font-light leading-[1.02] text-main-content-color-primavera1 sm:text-7xl lg:text-[6rem];
+}
+
+.hero-title span {
+  @apply font-semibold text-main-content-color-primavera1;
+}
+
+.hero-description {
+  @apply mt-7 max-w-3xl text-base leading-8 text-main-content-color-primavera1/70 md:text-xl;
+}
+
+.hero-actions {
+  @apply mt-9 flex flex-wrap items-center justify-center gap-5;
+}
+
+.hero-actions {
+  @apply px-8;
+}
+
+
+.hero-image {
+  @apply w-full h-full object-cover;
+}
+
+.hero-socials {
+  @apply mt-8 flex items-center gap-4;
+}
+
+.hero-social-label {
+  @apply mr-2 text-xs uppercase tracking-[0.12em] text-main-content-color-primavera1;
+}
+
+@media (max-width: 639px) {
+  .home {
+    @apply min-h-0 pt-28;
+  }
+
+  .home-started {
+    @apply gap-10;
+  }
+
+  .hero-title {
+    @apply text-5xl;
+  }
+
+  .hero-visual {
+    /* @apply w-[min(84vw, 390px)]; */
+  }
+
+  .hero-visual::before {
+    @apply border-[8px];
+  }
+}

@@ -1,0 +1,71 @@
+@import "./fonts.css";
+@import "./root-token.css";
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: portfolio --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio";
+  default: true;
+  prefersdark: false;
+  color-scheme: dark;
+  --color-primary: var(--main-daisy-primary-color);
+  --color-primary-content: var(--main-daisy-primary-content-color);
+  --color-secondary: var(--main-color-primavera1);
+  --color-accent: var(--main-color-primavera2);
+  --color-neutral: var(--main-content-color-primavera1);
+  --color-base-content: var(--main-content-color-primavera3);
+  --radius-box: 0.15rem;
+  --radius-field: 0.15rem;
+}
+
+@theme inline {
+  --color-main-color-primavera1: var(--main-color-primavera1);
+  --color-main-color-primavera2: var(--main-color-primavera2);
+  --color-main-color-primavera3: var(--main-color-primavera3);
+  --color-main-color-primavera4: var(--main-color-primavera4);
+  --color-main-color-primavera5: var(--main-color-primavera5);
+  --color-main-content-color-primavera1: var(--main-content-color-primavera1);
+  --color-main-content-color-primavera2: var(--main-content-color-primavera2);
+  --color-main-content-color-primavera3: var(--main-content-color-primavera3);
+  --color-main-content-color-primavera4: var(--main-content-color-primavera4);
+  --animate-fadeInUp: fadeInUp 0.4s ease-out;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+
+  html,
+  body {
+    scroll-behavior: smooth;
+    font-family: 'Ekachon', 'Noto Sans Thai', sans-serif;
+    @apply m-0 overflow-x-hidden bg-main-color-primavera1 text-main-content-color-primavera1;
+  }
+
+  ::selection {
+    background: var(--main-color-primavera3);
+    color: var(--main-content-color-primavera1);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--main-color-primavera2);
+    outline-offset: 4px;
+  }
+}
+
+.icon-up {
+  @apply flex size-11 cursor-pointer items-center justify-center rounded-full border border-main-color-primavera2 bg-main-color-primavera1 text-main-content-color-primavera1 transition-colors duration-200 hover:border-main-color-primavera4 hover:bg-main-color-primavera4 hover:text-main-content-color-primavera4;
+}

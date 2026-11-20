@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { SectionBoxProps } from './type'
 
 // style
-import styled from './sectionBox.module.scss'
+import styled from './sectionBox.module.css'
 
 const SectionBox = ({ children, className, ...props }: SectionBoxProps) => {
   return (

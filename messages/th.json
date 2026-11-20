@@ -1,7 +1,122 @@
 {
+    "nav": {
+        "home": "หน้าแรก",
+        "about": "เกี่ยวกับฉัน",
+        "experience": "ประสบการณ์",
+        "portfolio": "ผลงาน",
+        "contact": "ติดต่อ",
+        "blog": "บล็อก"
+    },
     "home": {
-        "title": "สวัสดีฉันชื่อ สีหราช พรหมรักษา",
-        "introduce": "เป็นผู้พัฒนาระบบประจำตำแหน่งที่ ttb spark",
-        "guide": "พอร์ตโฟลิโอของเว็บไซต์นี้เป็นผลงานทั้งหมดของฉัน คุณสามารถกดลิ้งค์จากแถบด้านบนหรือเลื่อนเพื่อดูพอร์ตโฟลิโอ"
+        "eyebrow": "วิศวกรซอฟต์แวร์ · กรุงเทพฯ ประเทศไทย",
+        "greeting": "สวัสดีครับ ผม",
+        "firstName": "สีหราช",
+        "lastName": "พรหมรักษา",
+        "introduce": "ผมเป็นวิศวกรซอฟต์แวร์ที่ ttb spark มุ่งสร้างประสบการณ์ดิจิทัลที่ใช้งานได้ดีและใส่ใจในรายละเอียด",
+        "viewWork": "ชมผลงาน",
+        "contactMe": "พูดคุยกัน",
+        "portraitNote": "สิ่งที่กำลังสร้าง",
+        "portraitCaption": "ประสบการณ์ดิจิทัลที่คิดมาอย่างดี",
+        "socialLabel": "ติดตามผมได้ที่",
+        "portraitAlt": "สีหราช พรหมรักษา ในที่ทำงาน"
+    },
+    "about": {
+        "eyebrow": "ทำความรู้จักกัน",
+        "title": "ออกแบบอย่างตั้งใจ ใช้งานได้จริง",
+        "role": "วิศวกรซอฟต์แวร์",
+        "basedIn": "ทำงานอยู่ที่",
+        "country": "ประเทศไทย",
+        "description": "ผมออกแบบและพัฒนาบริการให้ลูกค้าหลากหลายกลุ่ม โดยเน้นเว็บไซต์ เว็บเซอร์วิส และร้านค้าออนไลน์ที่ทันสมัย ความสนใจของผมคือการสร้างประสบการณ์ดิจิทัลผ่านส่วนติดต่อที่โดดเด่นและการโต้ตอบที่มีความหมาย",
+        "emailLabel": "อีเมล",
+        "phoneLabel": "โทรศัพท์",
+        "addressLabel": "ที่อยู่",
+        "linkedinLabel": "LinkedIn",
+        "downloadCv": "ดาวน์โหลด CV",
+        "portraitAlt": "ภาพถ่ายสีหราช พรหมรักษา"
+    },
+    "experience": {
+        "eyebrow": "เส้นทางการทำงาน",
+        "skillsEyebrow": "ทักษะของผม",
+        "title": "ประสบการณ์และทักษะ",
+        "experienceTitle": "ประสบการณ์",
+        "skillsTitle": "ทักษะ",
+        "items": {
+            "ttb": {
+                "period": "2024 - ปัจจุบัน",
+                "role": "Front-end Software Engineer Associate",
+                "company": "ttb spark"
+            },
+            "bitkub": {
+                "period": "2022 - 2024",
+                "role": "Front-end Software Developer",
+                "company": "Bitkub Blockchain Technology Co., Ltd."
+            },
+            "interset": {
+                "period": "2021 - 2022",
+                "role": "Back-end Software Developer",
+                "company": "Inter Set Research And Solution Co., Ltd."
+            }
+        },
+        "skills": {
+            "typescript": "TypeScript",
+            "react": "React",
+            "nextjs": "Next.js",
+            "nestjs": "NestJS",
+            "jest": "Jest",
+            "golang": "Golang"
+        }
+    },
+    "portfolio": {
+        "eyebrow": "ผลงานที่คัดสรร",
+        "title": "โปรเจกต์จากการลงมือทำ",
+        "description": "ตัวอย่างเว็บโปรเจกต์ที่สร้างขึ้นเพื่อแก้โจทย์การทำงานจริง ตั้งแต่ระบบจัดการงานก่อสร้างไปจนถึงเครื่องมือสำหรับนักพัฒนา",
+        "view": "ดูโปรเจกต์",
+        "projects": {
+            "wisdom": {
+                "title": "Wisdom construction",
+                "feature": "ตรวจสอบงานก่อสร้าง"
+            },
+            "management": {
+                "title": "Wisdom construction management",
+                "feature": "ตรวจสอบงานก่อสร้าง"
+            },
+            "api": {
+                "title": "Open API management",
+                "feature": "แพลตฟอร์มเว็บ Open API"
+            },
+            "converter": {
+                "title": "Image converter",
+                "feature": "เครื่องมือแปลงรูปภาพบนเว็บ"
+            }
+        }
+    },
+    "contact": {
+        "eyebrow": "เริ่มต้นพูดคุย",
+        "title": "มาสร้างสิ่งที่เป็นประโยชน์ด้วยกัน",
+        "formTitle": "ส่งข้อความถึงผม",
+        "description": "พร้อมรับงานอิสระเมื่อมีโปรเจกต์ที่เหมาะสม ติดต่อมาพูดคุยกันได้เลยครับ",
+        "name": "ชื่อ",
+        "email": "อีเมล",
+        "phone": "โทรศัพท์",
+        "message": "ข้อความ",
+        "namePlaceholder": "ชื่อของคุณ",
+        "emailPlaceholder": "you@example.com",
+        "phonePlaceholder": "หมายเลขโทรศัพท์",
+        "messagePlaceholder": "เล่าเกี่ยวกับโปรเจกต์ของคุณสักเล็กน้อย",
+        "submit": "ส่งข้อความ",
+        "success": "ส่งข้อความเรียบร้อยแล้ว",
+        "error": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง",
+        "validation": {
+            "name": "กรุณากรอกชื่อ",
+            "phone": "กรุณากรอกหมายเลขโทรศัพท์",
+            "email": "กรุณากรอกอีเมล",
+            "message": "กรุณากรอกข้อความ"
+        }
+    },
+    "footer": {
+        "copyright": "© {year} สีหราช พรหมรักษา สงวนลิขสิทธิ์"
+    },
+    "blog": {
+        "title": "บล็อก"
     }
 }
