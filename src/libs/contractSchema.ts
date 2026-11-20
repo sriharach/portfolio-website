@@ -1,13 +1,20 @@
-import { FormContract } from '@/types/models/contract.modal'
 import * as yup from 'yup'
 
-export default () => {
-  return yup
+type ValidationMessages = {
+  name: string
+  phone: string
+  email: string
+  message: string
+}
+
+const contractSchema = (messages: ValidationMessages) =>
+  yup
     .object({
-      name: yup.string().required('Name is a required field.'),
-      phone_number: yup.string().required('Phone number is a required field.'),
-      mail: yup.string().required('E-mail is a required field.'),
-      message: yup.string().required('Message is a required field.'),
+      name: yup.string().required(messages.name),
+      phone_number: yup.string().required(messages.phone),
+      mail: yup.string().required(messages.email),
+      message: yup.string().required(messages.message),
     })
     .required()
-}
+
+export default contractSchema

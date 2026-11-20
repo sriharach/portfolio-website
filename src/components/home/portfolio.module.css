@@ -1,0 +1,119 @@
+@reference "../../styles/globals.css";
+
+.profile {
+  @apply flex items-center bg-base-100 px-5 py-24 sm:px-8 sm:py-32 lg:px-14;
+}
+
+.profile-box-col {
+  @apply mx-auto flex w-full max-w-7xl flex-col items-start gap-12;
+}
+
+.portfolio-heading {
+  @apply flex w-full flex-col justify-between gap-6 md:flex-row md:items-end;
+}
+
+.portfolio-kicker {
+  @apply mb-4 text-xs font-bold uppercase tracking-[0.14em] text-main-content-color-primavera1;
+}
+
+.portfolio-title {
+  @apply text-6xl font-semibold leading-none text-main-content-color-primavera1 sm:text-8xl;
+}
+
+.portfolio-intro {
+  @apply max-w-lg leading-7 text-main-content-color-primavera1/65 md:pb-2;
+}
+
+.project-list {
+  @apply flex w-full flex-col gap-20 sm:gap-28;
+}
+
+.project-card {
+  @apply relative isolate grid w-full grid-cols-1 items-center gap-8 md:grid-cols-[0.78fr_1.22fr] md:gap-12 py-8;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-color: var(--main-color-primavera4);
+}
+
+.project-card[data-tone='white']::before {
+  background-color: var(--main-color-primavera1);
+}
+
+.project-card[data-tone='orange'] .project-title,
+.project-card[data-tone='orange'] .project-link {
+  @apply text-main-content-color-primavera4;
+}
+
+.project-card[data-tone='orange'] .project-link {
+  @apply border-main-content-color-primavera4;
+}
+
+.project-card[data-image-position='image-left'] {
+  @apply md:grid-cols-[1.22fr_0.78fr];
+}
+
+.project-card[data-image-position='image-left'] .project-copy {
+  @apply md:col-start-2 md:row-start-1;
+}
+
+.project-card[data-image-position='image-left'] .project-image-link {
+  @apply md:col-start-1 md:row-start-1;
+}
+
+.project-copy {
+  @apply flex flex-col items-start;
+}
+
+.project-index {
+  @apply mb-8 text-base font-semibold text-main-content-color-primavera1/70;
+}
+
+.project-feature {
+  @apply text-xs font-bold uppercase tracking-[0.12em] text-main-content-color-primavera1;
+}
+
+.project-title {
+  @apply mt-3 max-w-xl text-2xl font-semibold leading-tight text-main-content-color-primavera3 sm:text-4xl;
+}
+
+.project-link {
+  @apply mt-7 btn btn-outline btn-primary;
+}
+
+.project-link svg {
+  @apply size-5;
+}
+
+.project-image-link {
+  @apply block w-full overflow-hidden rounded-[24px] bg-main-color-primavera2 text-left sm:rounded-[32px];
+}
+
+.project-image {
+  @apply h-auto w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.025];
+}
+
+@media (max-width: 767px) {
+  .project-card {
+    grid-template-areas: 'visual' 'copy';
+  }
+
+  .project-copy {
+    grid-area: copy;
+  }
+
+  .project-image-link {
+    grid-area: visual;
+  }
+
+  .project-index {
+    @apply mb-5;
+  }
+}

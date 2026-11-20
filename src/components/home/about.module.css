@@ -1,0 +1,60 @@
+@reference "../../styles/globals.css";
+
+.about-kicker {
+  @apply mb-5 flex items-center gap-3 text-xs font-bold uppercase text-main-content-color-primavera1;
+}
+
+.home-profile {
+  @apply relative z-10 mx-auto -mb-12 aspect-square w-[min(74vw,440px)] rounded-full border-10 border-main-color-primavera4 object-cover object-[center_22%];
+}
+
+.about-stack {
+  @apply mx-auto flex w-full max-w-5xl flex-col items-center md:col-span-2;
+}
+
+.about {
+  @apply relative bg-main-color-primavera4 flex w-full flex-col items-start gap-5 rounded-[28px] px-6 pb-8 pt-20 sm:px-10 sm:pb-10 sm:pt-24;
+}
+
+.about-title {
+  @apply max-w-4xl text-3xl font-semibold leading-tight text-main-content-color-primavera4 sm:text-5xl;
+}
+
+.about-role {
+  @apply flex flex-wrap gap-x-2 text-base sm:text-lg;
+}
+
+.about-role span:first-child {
+  @apply font-bold text-main-content-color-primavera4;
+}
+
+.about-role span:last-child {
+  @apply font-bold text-main-content-color-primavera4;
+}
+
+.about-description {
+  @apply max-w-3xl text-sm leading-7 text-main-content-color-primavera1 sm:text-base;
+}
+
+.about-list-contract {
+  @apply w-24 shrink-0 text-xs font-bold uppercase text-main-content-color-primavera1 sm:text-sm;
+}
+
+.about-facts {
+  @apply grid w-full grid-cols-1 gap-x-6  py-3 sm:grid-cols-2;
+}
+
+.about-fact {
+  @apply flex min-w-0 items-baseline gap-2  py-3 last:border-0 sm:odd:border-r sm:odd:pr-5;
+}
+
+
+@media (max-width: 639px) {
+  .home-profile {
+    @apply -mb-8 w-[min(76vw,320px)] border-[7px];
+  }
+
+  .about {
+    @apply rounded-[22px] px-5 pb-7 pt-14;
+  }
+}

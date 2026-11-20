@@ -3,7 +3,7 @@
 // libs
 import React, { useRef, useEffect, useState, ReactNode } from 'react'
 import clsx from 'clsx'
-import styled from './fadeUponScroll.module.scss'
+import styled from './fadeUponScroll.module.css'
 
 interface FadeUpOnScrollProps
   extends React.DetailedHTMLProps<

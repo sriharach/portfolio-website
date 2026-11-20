@@ -1,0 +1,42 @@
+@reference "../../../styles/globals.css";
+
+.layout__header {
+  @apply fixed backdrop-blur-sm left-0 bg-main-color-primavera1 right-0 top-0 z-9999 flex h-[72px] items-center justify-between border-b border-white/10 px-5 text-main-content-color-primavera1 transition-all duration-300 sm:px-8 lg:px-14;
+}
+
+.layout__header-push-content {
+  @apply bg-transparent border-main-color-primavera2/15;
+}
+
+.layout__header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  z-index: 1;
+  transition: width 0.15s linear;
+  background: var(--main-color-primavera4);
+  width: var(--progress);
+}
+
+.layout__footer {
+  @apply flex min-h-32 items-center justify-between border-t border-base-100/10 bg-main-color-primavera2 px-5 py-10 text-sm text-main-content-color-primavera4 sm:px-8 lg:px-28;
+}
+
+.layout__footer a {
+  @apply transition-colors hover:text-main-content-color-primavera3;
+}
+
+.layout__text-hover-underline {
+  @apply relative text-sm font-semibold text-main-content-color-primavera1 transition-colors hover:text-main-content-color-primavera3;
+}
+
+.layout__text-hover-underline::after {
+  content: '';
+  @apply absolute -bottom-2 left-0 h-px w-0 bg-main-color-primavera4 transition-[width] duration-300;
+}
+
+.layout__text-hover-underline:hover::after {
+  @apply w-full;
+}

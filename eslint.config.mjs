@@ -8,6 +8,7 @@ const __dirname = dirname(__filename)
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  recommendedConfig: pluginJs.configs.recommended,
 })
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -24,6 +25,7 @@ const eslintConfig = [
   pluginJs.configs.recommended,
   {
     rules: {
+      'no-unused-vars': 'off',
       '@next/next/no-css-tags': 'off',
       '@next/next/no-img-element': 'off',
       '@typescript-eslint/no-var-requires': 'off',

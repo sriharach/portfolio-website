@@ -1,9 +1,10 @@
 // libs
 import { useForm } from 'react-hook-form'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
+import { useTranslations } from 'next-intl'
 
 // types
 import { FormContract } from '@/types/models/contract.modal'
@@ -12,6 +13,8 @@ import { FormContract } from '@/types/models/contract.modal'
 import contractSchema from '@/libs/contractSchema'
 
 const useContact = () => {
+  const t = useTranslations('contact')
+  const validation = useTranslations('contact.validation')
   const [loading, setLoading] = useState(false)
 
   const serviceID = process.env.SERVICE_ID as string
@@ -25,7 +28,14 @@ const useContact = () => {
     clearErrors,
     formState: { errors },
   } = useForm<FormContract>({
-    resolver: yupResolver(contractSchema()),
+    resolver: yupResolver(
+      contractSchema({
+        name: validation('name'),
+        phone: validation('phone'),
+        email: validation('email'),
+        message: validation('message'),
+      }),
+    ),
   })
 
   const handleSubmitContract = handleSubmit((data) => {
@@ -40,14 +50,14 @@ const useContact = () => {
           name: '',
           mail: '',
           message: '',
-          phone_number: ''
+          phone_number: '',
         })
         clearErrors()
-        toast.success('Email has been sent.')
+        toast.success(t('success'))
       })
       .catch(() => {
         setLoading(false)
-        toast.error('Error. Try again later.')
+        toast.error(t('error'))
       })
   })
 

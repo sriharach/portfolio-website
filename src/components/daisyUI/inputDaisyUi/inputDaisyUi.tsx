@@ -13,7 +13,7 @@ const InputDaisyUi = ({
   return (
     <input
       className={clsx(
-        'input',
+        'input w-full border rounded-md',
         {
           'input-xs': inputSize === 'xs',
           'input-sm': inputSize === 'sm',

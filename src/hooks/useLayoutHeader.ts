@@ -1,6 +1,6 @@
 // libs
 import React from 'react'
-import styled from '@/components/modules/layouts/layout.module.scss'
+import styled from '@/components/modules/layouts/layout.module.css'
 
 const useLayoutHeader = () => {
   React.useEffect(() => {

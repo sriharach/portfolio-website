@@ -1,9 +1,10 @@
 // libs
 import React from 'react'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 // components
-import styled from './home.module.scss'
+import styled from './about.module.css'
 import ButtonDaisyUi from '../daisyUI/buttonDaisyUi/ButtonDaisyUi'
 import TextTopic from '../shared/textTopic/textTopic'
 
@@ -14,54 +15,52 @@ import SectionBox from '../shared/sectionBox/sectionBox'
 import useAbout from '@/hooks/useAbout'
 
 const AboutPage = () => {
+  const t = useTranslations('about')
   // hooks
   const { isMobileResponsive, onClickDownloadCV } = useAbout()
 
   return (
     <SectionBox id='about'>
-      <Image
-        src='/img/main-profile.webp'
-        alt=''
-        width={isMobileResponsive ? 260 : 360}
-        height={isMobileResponsive ? 260 : 360}
-        className={styled['home-profile']}
-      />
-      <div className={styled['about']}>
-        <TextTopic text='About' className='text-2xl md:text-6xl font-bold' />
-        <p className='text-2xl md::text-5xl font-bold'>Sriharach Promruksa</p>
-        <div className='flex flex-row space-x-1 text-lg'>
-          <span className='text-main-color-primavera1'>Software Engineer</span>
-          <span>based in</span>
-          <span className='text-main-color-primavera1'>Thailand</span>
-        </div>
-        <p aria-description='about description' className='text-zinc-500 text-sm sm:text-base'>
-          I design and develop services for customers of all sizes, specializing
-          in creating stylish, modern websites, web services and online stores.
-          My passion is to design digital user experiences through the bold
-          interface and meaningful interactions. Check out my Portfolio
-        </p>
-        <div className='grid grid-cols-1 xl:grid-cols-2 gap-3 md:gap-6'>
-          <div className='flex flex-row'>
-            <span className={styled['about-list-contract']}>E-mail</span>
-            <span className='text-zinc-500 text-sm sm:text-base'>folksriahrach@gmail.com</span>
+      <div className={styled['about-stack']}>
+        <Image
+          src='/portfolio/img/main-profile.webp'
+          alt={t('portraitAlt')}
+          width={isMobileResponsive ? 300 : 440}
+          height={isMobileResponsive ? 300 : 440}
+          className={styled['home-profile']}
+        />
+        <div className={styled['about']}>
+          <p className={styled['about-kicker']}>{t('eyebrow')}</p>
+          <TextTopic text={t('title')} className={styled['about-title']} />
+          <div className={styled['about-role']}>
+            <span>{t('role')}</span>
+            <span>{t('basedIn')}</span>
+            <span>{t('country')}</span>
           </div>
-          <div className='flex flex-row'>
-            <span className={styled['about-list-contract']}>Phone</span>
-            <span className='text-zinc-500 text-sm sm:text-base'>096-301-1722</span>
-          </div>
-          <div className='flex flex-row'>
-            <span className={styled['about-list-contract']}>Address</span>
-            <span className='text-zinc-500 text-sm sm:text-base'>Klong sam wa Bangkok</span>
-          </div>
-          <div className='flex flex-row'>
-            <span className={styled['about-list-contract']}>Linkedin</span>
-            <span className='text-zinc-500 text-sm sm:text-base'>Sriharach Promruksa</span>
+          <p className={styled['about-description']}>{t('description')}</p>
+          <div className={styled['about-facts']}>
+            <div className={styled['about-fact']}>
+              <span className={styled['about-list-contract']}>{t('emailLabel')}</span>
+              <span className='break-all text-sm sm:text-base text-main-content-color-primavera4'>folksriahrach@gmail.com</span>
+            </div>
+            <div className={styled['about-fact']}>
+              <span className={styled['about-list-contract']}>{t('phoneLabel')}</span>
+              <span className='text-sm sm:text-base text-main-content-color-primavera4'>096-301-1722</span>
+            </div>
+            <div className={styled['about-fact']}>
+              <span className={styled['about-list-contract']}>{t('addressLabel')}</span>
+              <span className='text-sm sm:text-base text-main-content-color-primavera4'>Klong sam wa Bangkok</span>
+            </div>
+            <div className={styled['about-fact']}>
+              <span className={styled['about-list-contract']}>{t('linkedinLabel')}</span>
+              <span className='text-sm sm:text-base text-main-content-color-primavera4'>Sriharach Promruksa</span>
+            </div>
           </div>
           <ButtonDaisyUi
-            onClick={onClickDownloadCV}
             variant='outline'
-            className='lg:min-h-[80px] text-white text-sm sm:text-lg mt-4 md:mt-8'
-            text='Download CV'
+            color='secondary'
+            onClick={onClickDownloadCV}
+            text={t('downloadCv')}
           />
         </div>
       </div>

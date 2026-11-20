@@ -1,0 +1,37 @@
+@reference "../../styles/globals.css";
+
+.contact-section {
+  @apply px-5 py-24 sm:px-8 lg:px-14 bg-main-color-primavera4;
+}
+
+.section-kicker {
+  @apply mb-4 text-xs font-bold uppercase tracking-[0.14em] text-main-content-color-primavera3;
+}
+
+.contact-copy {
+  @apply max-w-xl leading-7 text-main-content-color-primavera4/70;
+}
+
+.contact-detail span {
+  @apply break-all;
+}
+
+.contact-details {
+  @apply mt-5 flex flex-col gap-4;
+}
+
+.contact-detail {
+  @apply flex items-center gap-3 text-sm text-main-content-color-primavera4;
+}
+
+.contact-form {
+  background: var(--main-color-primavera1);
+  @apply flex w-full flex-col gap-4 rounded-[24px] border border-main-color-primavera4/30 p-5 text-main-content-color-primavera1 sm:p-8;
+}
+
+.contact-submit {
+  background: var(--main-color-primavera4);
+  border-color: var(--main-color-primavera4);
+  color: var(--main-content-color-primavera4);
+  @apply mt-1 rounded-full font-semibold;
+}

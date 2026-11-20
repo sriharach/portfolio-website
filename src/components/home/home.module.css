@@ -1,0 +1,15 @@
+@reference "../../styles/globals.css";
+
+.home-page {
+  background: var(--main-color-primavera1);
+  color: var(--color-base-content);
+}
+
+.section-kicker {
+  @apply mb-5 flex items-center gap-3 text-xs font-bold uppercase text-main-content-color-primavera1;
+}
+
+.section-kicker::before {
+  content: '';
+  @apply block h-px w-10 bg-main-color-primavera1;
+}
