@@ -5,14 +5,17 @@ import Contact from './Contact'
 import Experiences from './Experiences'
 import HomePage from './HomePage'
 import Portfolio from './Portfolio'
+import Skills from './Skills'
+import styled from './home.module.css'
 
 export default function PortfolioPage() {
   return (
-    <div className='flex-1 overflow-y-hidden'>
+    <div className={`${styled['home-page']} flex-1`}>
       <HomePage />
+      <Skills />
       <AboutPage />
-      <Experiences />
       <Portfolio />
+      <Experiences />
       <Contact />
     </div>
   )

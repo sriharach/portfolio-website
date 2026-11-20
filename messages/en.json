@@ -4,7 +4,8 @@
         "about": "About",
         "experience": "Experience",
         "portfolio": "Selected work",
-        "contact": "Contact"
+        "contact": "Contact",
+        "blog": "Blog"
     },
     "home": {
         "eyebrow": "Software engineer · Bangkok, Thailand",
@@ -35,6 +36,7 @@
     },
     "experience": {
         "eyebrow": "Career timeline",
+        "skillsEyebrow": "My skills",
         "title": "Experience & toolkit",
         "experienceTitle": "Experience",
         "skillsTitle": "Skills",
@@ -113,5 +115,8 @@
     },
     "footer": {
         "copyright": "© {year} Sriharach Promruksa. All rights reserved."
+    },
+    "blog": {
+        "title": "Blog"
     }
 }

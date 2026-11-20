@@ -1,7 +1,6 @@
 // libs
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
-import { setRequestLocale } from 'next-intl/server'
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
@@ -9,6 +8,7 @@ import '@/styles/globals.css'
 // components
 import Layout from '../../components/modules/layouts/Layout'
 import DocumentRoot from '../DocumentRoot'
+import { routing } from '@/i18n/routing';
 
 export const metadata: Metadata = {
   title: 'Portfolio Sriharach',
@@ -21,7 +21,7 @@ type LayoutProps = {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'th' }]
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
@@ -29,7 +29,7 @@ export default async function RootLayout({
   params,
 }: Readonly<LayoutProps>) {
   const { locale } = await params
-  setRequestLocale(locale)
+  setRequestLocale(locale);
   const messages = await getMessages()
 
   return (

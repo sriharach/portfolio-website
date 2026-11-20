@@ -2,6 +2,7 @@
 import React from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
 
 // components
 import SwitchLocale from '../switchLocale/SwitchLocale'
@@ -21,26 +22,29 @@ const MobileMode = () => {
           aria-label='close sidebar'
           className='drawer-overlay'
         />
-        <div className='menu bg-white text-base-content min-h-full w-60 '>
-          <ul className='flex flex-col space-y-4 pt-6'>
-            <li role='button'>
-              <a href='#home'>{t('home')}</a>
+        <div className='menu min-h-full w-[18rem] border-l border-main-color-primavera1/10 bg-main-color-primavera1 text-base-content'>
+          <ul className='flex flex-col gap-1 pt-16'>
+            <li>
+              <Link href='/#home'>{t('home')}</Link>
             </li>
-            <li role='button'>
-              <a href='#about'>{t('about')}</a>
+            <li>
+              <Link href='/#about'>{t('about')}</Link>
             </li>
-            <li role='button'>
-              <a href='#experiences'>{t('experience')}</a>
+            <li>
+              <Link href='/#experiences'>{t('experience')}</Link>
             </li>
-            <li role='button'>
-              <a href='#portfolio'>{t('portfolio')}</a>
+            <li>
+              <Link href='/#portfolio'>{t('portfolio')}</Link>
             </li>
-            <li role='button'>
-              <a href='#contact'>{t('contact')}</a>
+            <li>
+              <Link href='/#contact'>{t('contact')}</Link>
+            </li>
+            <li>
+              <Link href='/blog'>{t('blog')}</Link>
             </li>
           </ul>
-          <div className='self-center pt-6'>
-             <SwitchLocale />
+          <div className='border-t border-main-color-primavera3 px-4 pt-4'>
+            <SwitchLocale />
           </div>
         </div>
       </aside>

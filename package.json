@@ -1,7 +1,7 @@
 {
-  "name": "resume-profile",
-  "version": "0.1.0",
-  "private": true,
+  "name": "portfolio-website",
+  "version": "3.0.0",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

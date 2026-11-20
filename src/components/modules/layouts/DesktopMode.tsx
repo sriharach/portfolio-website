@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
 
 // components
 import SwitchLocale from '../switchLocale/SwitchLocale'
@@ -8,22 +9,25 @@ const DesktopMode = () => {
   const t = useTranslations('nav')
 
   return (
-    <section className='hidden justify-between items-center space-x-12 lg:flex'>
-      <ul className='flex space-x-8 items-center'>
-        <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#home'>{t('home')}</a>
+    <section className='hidden items-center justify-between space-x-10 lg:flex'>
+      <ul className='flex items-center space-x-7'>
+        <li className={styled['layout__text-hover-underline']}>
+          <Link href='/#home'>{t('home')}</Link>
         </li>
-        <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#about'>{t('about')}</a>
+        <li className={styled['layout__text-hover-underline']}>
+          <Link href='/#about'>{t('about')}</Link>
         </li>
-        <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#experiences'>{t('experience')}</a>
+        <li className={styled['layout__text-hover-underline']}>
+          <Link href='/#experiences'>{t('experience')}</Link>
         </li>
-        <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#portfolio'>{t('portfolio')}</a>
+        <li className={styled['layout__text-hover-underline']}>
+          <Link href='/#portfolio'>{t('portfolio')}</Link>
         </li>
-        <li role='button' className={styled['layout__text-hover-underline']}>
-          <a href='#contact'>{t('contact')}</a>
+        <li className={styled['layout__text-hover-underline']}>
+          <Link href='/#contact'>{t('contact')}</Link>
+        </li>
+        <li className={styled['layout__text-hover-underline']}>
+          <Link href='/blog'>{t('blog')}</Link>
         </li>
       </ul>
       <SwitchLocale />

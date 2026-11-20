@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { FiArrowDownRight } from 'react-icons/fi'
 
 // styles
-import styled from './home.module.css'
+import styled from './hero.module.css'
 
 // hooks
 import useHome from '@/hooks/useHome'
@@ -29,11 +29,11 @@ const HomePage = () => {
           </h1>
           <p className={styled['hero-description']}>{t('introduce')}</p>
           <div className={styled['hero-actions']}>
-            <a className='btn btn-primary gap-3 text-white' href='#portfolio'>
+            <a className='btn btn-primary rounded-full gap-3' href='#portfolio'>
               {t('viewWork')}
               <FiArrowDownRight aria-hidden='true' className='size-4' />
             </a>
-            <a className='btn btn-ghost text-main-color-primavera4' href='#contact'>
+            <a className='btn btn-outline btn-primary rounded-full' href='#contact'>
               {t('contactMe')}
             </a>
           </div>
@@ -57,9 +57,10 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className={styled['hero-visual']}>
-          <span className={styled['hero-stamp']}>{t('portraitNote')}</span>
-          <figure className={styled['hero-frame']}>
+        <div className="relative flex items-center justify-center w-[340px] h-[340px]">
+          <div className="absolute w-[345px] h-[345px] rounded-full border-2 border-dashed border-slate-300/80 animate-[spin_30s_linear_infinite_reverse]" />
+          <div className="absolute w-[300px] h-[300px] rounded-full border-2 border-dashed border-slate-300/80 animate-[spin_25s_linear_infinite]" />
+          <div className="relative z-10 w-[250px] h-[250px] rounded-full overflow-hidden shadow-lg bg-slate-800">
             <Image
               alt={t('portraitAlt')}
               className={styled['hero-image']}
@@ -69,11 +70,13 @@ const HomePage = () => {
               src='/portfolio/img/main-profile.webp'
               width={720}
             />
-          </figure>
-          <div className={styled['hero-caption']}>
-            <span className={styled['hero-caption-number']}>01</span>
-            <span className={styled['hero-caption-copy']}>{t('portraitCaption')}</span>
           </div>
+          <span className="absolute top-2 right-16 z-20 badge badge-lg h-10 px-5 rounded-full bg-[#9ebccb] text-white border-none font-medium shadow-sm">
+            Advisor
+          </span>
+          <span className="absolute bottom-2 left-10 z-20 badge badge-lg h-10 px-5 rounded-full bg-[#e3f554] text-slate-900 border-none font-medium shadow-sm">
+            Rise
+          </span>
         </div>
       </div>
     </section>

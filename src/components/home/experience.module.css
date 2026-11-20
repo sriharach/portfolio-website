@@ -1,0 +1,55 @@
+@reference "../../styles/globals.css";
+
+.experience-section {
+  @apply px-5 py-24 sm:px-8 lg:px-14 bg-main-color-primavera5;
+}
+
+.experiences {
+  @apply mx-auto flex w-full max-w-7xl flex-col gap-10;
+}
+
+.experience-heading {
+  @apply max-w-3xl;
+}
+
+.experience-list {
+  @apply flex flex-col;
+}
+
+.experience-card {
+  @apply grid grid-cols-[56px_1fr] items-center gap-5  py-6 sm:gap-8;
+}
+
+.experience-index {
+  @apply text-sm font-bold text-main-content-color-primavera1;
+}
+
+.experience-logo {
+  @apply size-12 rounded-full bg-white p-1;
+}
+
+.experience-copy {
+  @apply min-w-0;
+}
+
+.experience-period {
+  @apply text-xs uppercase text-main-content-color-primavera1;
+}
+
+.experience-role {
+  @apply mt-1 text-xl font-semibold text-main-content-color-primavera1 sm:text-2xl;
+}
+
+.experience-company {
+  @apply text-sm text-main-content-color-primavera1/65 sm:text-base;
+}
+
+@media (max-width: 639px) {
+  .experience-card {
+    @apply grid-cols-1 gap-3;
+  }
+
+  .experience-logo {
+    @apply size-10;
+  }
+}

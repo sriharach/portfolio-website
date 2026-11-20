@@ -7,6 +7,7 @@ import clsx from 'clsx'
 
 // hooks
 import useLayoutHeader from '@/hooks/useLayoutHeader'
+import { Link } from '@/i18n/routing'
 
 // components
 import DesktopMode from './DesktopMode'
@@ -21,9 +22,9 @@ const Header = () => {
       data-testid='test-header'
       className={clsx(styled['layout__header'])}
     >
-      <a className='text-lg font-bold tracking-[0.08em] text-main-color-primavera4' href='#home'>
-        SRIHARACH<span className='text-main-color-primavera1'>.</span>
-      </a>
+      <Link className='text-base font-bold tracking-[0.12em] text-main-content-color-primavera1' href='/#home'>
+        SRIHARACH
+      </Link>
       <DesktopMode />
       <MobileMode />
     </header>

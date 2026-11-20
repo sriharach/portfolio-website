@@ -4,7 +4,8 @@
         "about": "เกี่ยวกับฉัน",
         "experience": "ประสบการณ์",
         "portfolio": "ผลงาน",
-        "contact": "ติดต่อ"
+        "contact": "ติดต่อ",
+        "blog": "บล็อก"
     },
     "home": {
         "eyebrow": "วิศวกรซอฟต์แวร์ · กรุงเทพฯ ประเทศไทย",
@@ -35,6 +36,7 @@
     },
     "experience": {
         "eyebrow": "เส้นทางการทำงาน",
+        "skillsEyebrow": "ทักษะของผม",
         "title": "ประสบการณ์และทักษะ",
         "experienceTitle": "ประสบการณ์",
         "skillsTitle": "ทักษะ",
@@ -113,5 +115,8 @@
     },
     "footer": {
         "copyright": "© {year} สีหราช พรหมรักษา สงวนลิขสิทธิ์"
+    },
+    "blog": {
+        "title": "บล็อก"
     }
 }
