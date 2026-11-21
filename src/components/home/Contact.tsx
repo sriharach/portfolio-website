@@ -83,7 +83,7 @@ const Contact = () => {
             />
             {errors.message?.message && <span className='text-sm text-red-700' role='alert'>{errors.message.message}</span>}
           </div>
-          <ButtonDaisyUi className={styled['contact-submit']} fullWidth loading={loading} text={t('submit')} type='submit' />
+          <ButtonDaisyUi color='primary' className='rounded-md' fullWidth loading={loading} text={t('submit')} type='submit' />
         </fieldset>
       </form>
     </SectionBox>

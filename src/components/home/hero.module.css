@@ -1,7 +1,7 @@
 @reference "../../styles/globals.css";
 
 .home {
-  @apply relative flex min-h-screen w-full flex-col items-center overflow-hidden px-5 pb-0 pt-32 sm:px-8 sm:pt-36;
+  @apply relative flex min-h-screen w-full flex-col items-center overflow-hidden px-5 pb-0 pt-32 sm:px-8 sm:pt-36 bg-main-color-primavera1;
 }
 
 .home-started {

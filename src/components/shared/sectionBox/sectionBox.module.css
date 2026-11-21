@@ -1,7 +1,7 @@
 @reference "../../../styles/globals.css";
 
 .section-box {
-  @apply relative px-5 py-20 sm:px-8 sm:py-24 lg:px-14;
+  @apply relative px-5 py-20 sm:px-8 sm:py-24 lg:px-14 bg-main-color-primavera1;
 }
 
 .section-box-grid {

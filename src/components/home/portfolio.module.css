@@ -1,7 +1,7 @@
 @reference "../../styles/globals.css";
 
 .profile {
-  @apply flex items-center bg-base-100 px-5 py-24 sm:px-8 sm:py-32 lg:px-14;
+  @apply flex items-center bg-base-100 px-5 py-24 sm:px-8 sm:py-32 lg:px-14 bg-main-color-primavera1;
 }
 
 .profile-box-col {
@@ -47,13 +47,8 @@
   background-color: var(--main-color-primavera1);
 }
 
-.project-card[data-tone='orange'] .project-title,
-.project-card[data-tone='orange'] .project-link {
+.project-card[data-tone='orange'] .project-title{
   @apply text-main-content-color-primavera4;
-}
-
-.project-card[data-tone='orange'] .project-link {
-  @apply border-main-content-color-primavera4;
 }
 
 .project-card[data-image-position='image-left'] {
@@ -84,13 +79,6 @@
   @apply mt-3 max-w-xl text-2xl font-semibold leading-tight text-main-content-color-primavera3 sm:text-4xl;
 }
 
-.project-link {
-  @apply mt-7 btn btn-outline btn-primary;
-}
-
-.project-link svg {
-  @apply size-5;
-}
 
 .project-image-link {
   @apply block w-full overflow-hidden rounded-[24px] bg-main-color-primavera2 text-left sm:rounded-[32px];

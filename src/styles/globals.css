@@ -4,19 +4,31 @@
 
 @plugin "daisyui" {
   themes: portfolio --default;
+  exclude: rootcolor;
 }
 
 @plugin "daisyui/theme" {
   name: "portfolio";
-  default: true;
-  prefersdark: false;
-  color-scheme: dark;
+  default: true; /* set as default */
+  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: light; /* color of browser-provided UI */
+  themecontroller: false; /* set to false to skip the theme-controller selector */
+
+  --color-base-100: var(--main-color-primavera7);
+  --color-base-200: oklch(95% 0.03 240);
+  --color-base-300: oklch(92% 0.04 240);
+  --color-base-content: var(--main-content-color-primavera3);
+
   --color-primary: var(--main-daisy-primary-color);
   --color-primary-content: var(--main-daisy-primary-content-color);
+ 
+
   --color-secondary: var(--main-color-primavera1);
+  --color-secondary-content:var(--main-color-primavera4);
+
   --color-accent: var(--main-color-primavera2);
-  --color-neutral: var(--main-content-color-primavera1);
-  --color-base-content: var(--main-content-color-primavera3);
+  --color-accent-content: var(--main-content-color-primavera3);
+
   --radius-box: 0.15rem;
   --radius-field: 0.15rem;
 }
@@ -55,17 +67,4 @@
     @apply m-0 overflow-x-hidden bg-main-color-primavera1 text-main-content-color-primavera1;
   }
 
-  ::selection {
-    background: var(--main-color-primavera3);
-    color: var(--main-content-color-primavera1);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--main-color-primavera2);
-    outline-offset: 4px;
-  }
-}
-
-.icon-up {
-  @apply flex size-11 cursor-pointer items-center justify-center rounded-full border border-main-color-primavera2 bg-main-color-primavera1 text-main-content-color-primavera1 transition-colors duration-200 hover:border-main-color-primavera4 hover:bg-main-color-primavera4 hover:text-main-content-color-primavera4;
 }

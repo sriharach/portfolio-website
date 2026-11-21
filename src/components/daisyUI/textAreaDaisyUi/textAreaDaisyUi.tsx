@@ -6,7 +6,7 @@ import { TextAreaDaisyUiProps } from './textAreaDaisyUi.type'
 const TextAreaDaisyUi = ({ inputError, ...props }: TextAreaDaisyUiProps) => {
   return (
     <textarea
-      className={clsx('textarea w-full border rounded-md', {
+      className={clsx('textarea w-full border rounded-md bg-main-color-primavera1', {
         'textarea-error': inputError,
       })}
       {...props}
